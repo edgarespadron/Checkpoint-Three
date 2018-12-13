@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Race Car</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+<div class="page">
+	<div class="city"></div>
+	<div class="road">
+		<div class="car">
+			<img src="img/car.png" class="moving-image" id="img">	
+		</div>
+		<div class="finish">
+		</div>
+	</div>
+	<br>
+	<h2 class="txt">Click on the car to finish the race.</h2>
+	<!--<div class="start">-->
+		<!--<button class="start-btn" id="start">Start</button>-->
+	<!--</div>-->
+</div>
+<script type="text/javascript">
+
+var count = 0;
+
+setInterval(finished, 100);
+
+$('#img').click(function() {
+	if(count == 0){
+		$('#img').addClass('animate');
+	}
+	if(count == 1){
+		$('#img').addClass('animate1');
+	}
+	if(count == 2){
+		$('#img').addClass('animate2');
+	}
+	if(count == 3){
+		$('#img').addClass('animate3');
+	}
+	count++;
+});
+
+function finished(){
+	if (count == 4) {
+		setTimeout(function() {
+			alert('Congrats! Your Race Have Been Finished.');
+		}, 3000);
+		count++;
+	}
+//	if(count == 4){
+//		count++;
+//	}
+
+}
+
+</script>
+
+</body>
+
+</html>
